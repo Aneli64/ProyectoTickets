@@ -1,0 +1,14 @@
+C:\Users\des60\Desktop\ProyectoTickets\bin\Debug\net9.0\ProyectoTickets.exe
+C:\Users\des60\Desktop\ProyectoTickets\bin\Debug\net9.0\ProyectoTickets.deps.json
+C:\Users\des60\Desktop\ProyectoTickets\bin\Debug\net9.0\ProyectoTickets.runtimeconfig.json
+C:\Users\des60\Desktop\ProyectoTickets\bin\Debug\net9.0\ProyectoTickets.dll
+C:\Users\des60\Desktop\ProyectoTickets\bin\Debug\net9.0\ProyectoTickets.pdb
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ProyectoTickets.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ProyectoTickets.AssemblyInfoInputs.cache
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ProyectoTickets.AssemblyInfo.cs
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ProyectoTickets.csproj.CoreCompileInputs.cache
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ProyectoTickets.dll
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\refint\ProyectoTickets.dll
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ProyectoTickets.pdb
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ProyectoTickets.genruntimeconfig.cache
+C:\Users\des60\Desktop\ProyectoTickets\obj\Debug\net9.0\ref\ProyectoTickets.dll
