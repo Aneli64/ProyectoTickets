@@ -7,11 +7,11 @@ const encodedCredentials = Buffer.from(credentials).toString('base64');
 
 const options = {
   hostname: 'app.teamsupport.com',
-  path: '/api/json/tickets',
+  path: '/api/json/Users',
   method: 'GET',
   headers: {
     'Authorization': `Basic ${encodedCredentials}`,
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json/Users',
     'User-Agent': 'Iditic',
   },
 };
