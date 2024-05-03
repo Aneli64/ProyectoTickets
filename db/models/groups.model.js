@@ -1,10 +1,8 @@
 const { DataTypes } = require('sequelize');
 
-// const { CATEGORY_TABLE } = require('./category.model');
+const GROUPS_TABLE = 'groups';
 
-const PRODUCT_TABLE = 'products';
-
-const ProductSchema = {
+const GroupSchema = {
   id: {
     allowNull: false,
     primaryKey: true,
@@ -33,6 +31,10 @@ const ProductSchema = {
     type: DataTypes.DATE,
     allowNull: false,
   },
+  importId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   dateModified: {
     type: DataTypes.DATE,
     allowNull: false,
@@ -48,4 +50,4 @@ const ProductSchema = {
   },
 }
 
-module.exports = { ProductSchema, PRODUCT_TABLE };
+module.exports = { GroupSchema, GROUPS_TABLE };
