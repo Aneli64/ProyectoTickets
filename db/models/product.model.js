@@ -1,6 +1,6 @@
-const { Model, DataTypes, Sequelize } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
-const { CATEGORY_TABLE } = require('./category.model');
+// const { CATEGORY_TABLE } = require('./category.model');
 
 const PRODUCT_TABLE = 'products';
 
@@ -41,20 +41,21 @@ const ProductSchema = {
 }
 
 
-class Product extends Model {
+// class Product extends Model {
 
-  static associate(models) {
-    this.belongsTo(models.Category, { as: 'category' });
-  }
+//   static associate(models) {
+//     this.belongsTo(models.Category, { as: 'category' });
+//   }
 
-  static config(sequelize) {
-    return {
-      sequelize,
-      tableName: PRODUCT_TABLE,
-      modelName: 'Product',
-      timestamps: false
-    }
-  }
-}
+//   static config(sequelize) {
+//     return {
+//       sequelize,
+//       tableName: PRODUCT_TABLE,
+//       modelName: 'Product',
+//       timestamps: false
+//     }
+//   }
+// }
 
-module.exports = { Product, ProductSchema, PRODUCT_TABLE };
+// module.exports = { Product, ProductSchema, PRODUCT_TABLE };
+module.exports = { ProductSchema, PRODUCT_TABLE };
