@@ -40,7 +40,7 @@ const TicketSchema = {
     onDelete: 'CASCADE',
   },
   orgId: {
-    type: DataTypes.UUID,
+    type: DataTypes.INTEGER,
     allowNull: false,
     references: {
       model: 'organizations',

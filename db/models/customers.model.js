@@ -10,7 +10,7 @@ const CustomerSchema = {
     defaultValue: DataTypes.UUIDV4
   },
   orgId: {
-    type: DataTypes.UUID,
+    type: DataTypes.INTEGER,
     allowNull: false,
     references: {
       model: 'organizations',
