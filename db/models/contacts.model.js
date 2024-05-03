@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 
-const USERS_TABLE = 'users';
+const CONTACTS_TABLE = 'contacts';
 
-const UserSchema = {
+const ContactSchema = {
   id: {
     allowNull: false,
     primaryKey: true,
@@ -18,6 +18,10 @@ const UserSchema = {
     },
     onUpdate: 'CASCADE',
     onDelete: 'CASCADE',
+  },
+  primaryGroupId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
   },
   email: {
     type: DataTypes.STRING,
@@ -55,20 +59,8 @@ const UserSchema = {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  isSystemAdmin: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  isFinanceAdmin: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
   isPortalUser: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  primaryGroupId: {
-    type: DataTypes.INTEGER,
     allowNull: false,
   },
   inOffice: {
@@ -96,18 +88,18 @@ const UserSchema = {
     allowNull: false,
 
   },
-  isOnline: {
+  disableOrganizationTicketsViewOnPortal: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  PortalViewOnly: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
-  isChatUser: {
-    type: DataTypes.BOOLEAN,
-    allowNull: false,
-  },
-  isAiUser: {
+  BlockInboundEmail: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
 }
 
-module.exports = { UserSchema, USERS_TABLE };
+module.exports = { CONTACTS_TABLE, ContactSchema };

@@ -1,0 +1,141 @@
+npm run migrations:generate orgs_tb
+npm run migrations:run
+
+ORGANIZATIONS
+----
+
+'use strict';
+
+const {ORG_TABLE, OrgSchema } = require('./../models/org.model');
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable(ORG_TABLE, OrgSchema);
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable(ORG_TABLE);
+  }
+};
+
+
+npm run migrations:generate products_tb
+npm run migrations:run
+
+PRODUCTS
+----
+
+'use strict';
+
+const { ProductSchema, PRODUCT_TABLE } = require('./../models/product.model');
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable(PRODUCT_TABLE, ProductSchema);
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable(PRODUCT_TABLE);
+  }
+};
+
+npm run migrations:generate groups_tb
+npm run migrations:run
+
+GROUPS
+----
+
+'use strict';
+
+const { GroupSchema, GROUPS_TABLE } = require('./../models/groups.model');
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable(GROUPS_TABLE, GroupSchema);
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable(GROUPS_TABLE);
+  }
+};
+
+npm run migrations:generate users_tb
+npm run migrations:run
+
+USERS
+----
+
+'use strict';
+
+const { UserSchema, USERS_TABLE } = require('./../models/users.model');
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable(USERS_TABLE, UserSchema);
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable(USERS_TABLE);
+  }
+};
+
+npm run migrations:generate customers_tb
+npm run migrations:run
+
+CUSTOMERS
+----
+
+'use strict';
+
+const { CustomerSchema, CUSTOMERS_TABLE } = require('./../models/customers.model');
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable(CUSTOMERS_TABLE, CustomerSchema);
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable(CUSTOMERS_TABLE);
+  }
+};
+
+npm run migrations:generate contacts_tb
+npm run migrations:run
+
+CONTACTS
+----
+
+'use strict';
+
+const { ContactSchema, CONTACTS_TABLE } = require('./../models/contacts.model');
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable(CONTACTS_TABLE, ContactSchema);
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable(CONTACTS_TABLE);
+  }
+};
+
+npm run migrations:generate tickets_tb
+npm run migrations:run
+
+TICKETS
+----
+
+'use strict';
+
+const { TicketSchema, TICKETS_TABLE } = require('./../models/tickets.model');
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable(TICKETS_TABLE, TicketSchema);
+  },
+
+  down: async (queryInterface) => {
+    await queryInterface.dropTable(TICKETS_TABLE);
+  }
+};
+
