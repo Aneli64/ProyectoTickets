@@ -1,4 +1,5 @@
 const Org = require('../models/org.model');
+// const { DataTypes } = require('sequelize');
 
 const newOrg = Org.build({
   id: 1,
