@@ -1,0 +1,23 @@
+ticketId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    references: {
+      model: 'tickets',
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE',
+  },
+
+  ---
+
+  actionId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    references: {
+      model: 'tickets',
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE',
+  },
