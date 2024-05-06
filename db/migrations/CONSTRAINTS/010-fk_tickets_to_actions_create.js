@@ -1,16 +1,16 @@
 'use strict';
 
-const { ACTIONS_TABLE } = require('../models/action.model');
+const { TICKETS_TABLE } = require('../../models/tickets.model');
 const { DataTypes } = require('sequelize');
 
 module.exports = {
   up: async (queryInterface) => {
-    queryInterface.addColumn(ACTIONS_TABLE, "ticketsId", {
+    queryInterface.addColumn(TICKETS_TABLE, "actionsId", {
 
     type: DataTypes.UUID,
     allowNull: false,
     references: {
-      model: 'tickets',
+      model: 'actions',
       key: 'id'
     },
     onUpdate: 'CASCADE',
@@ -20,6 +20,6 @@ module.exports = {
   },
 
   down: async (queryInterface) => {
-    queryInterface.removeColumn(ACTIONS_TABLE, "ticketsId")
+    queryInterface.removeColumn(TICKETS_TABLE, "actionsId")
   }
 };

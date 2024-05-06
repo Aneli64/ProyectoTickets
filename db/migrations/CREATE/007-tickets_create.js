@@ -1,6 +1,6 @@
 'use strict';
 
-const { TicketSchema, TICKETS_TABLE } = require('../models/tickets.model');
+const { TicketSchema, TICKETS_TABLE } = require('../../models/tickets.model');
 
 module.exports = {
   up: async (queryInterface) => {

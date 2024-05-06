@@ -1,6 +1,6 @@
 'use strict';
 
-const {ORG_TABLE, OrgSchema } = require('../models/org.model');
+const {ORG_TABLE, OrgSchema } = require('../../models/org.model');
 
 module.exports = {
   up: async (queryInterface) => {

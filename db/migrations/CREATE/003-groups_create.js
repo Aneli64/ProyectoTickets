@@ -1,6 +1,6 @@
 'use strict';
 
-const { GroupSchema, GROUPS_TABLE } = require('../models/groups.model');
+const { GroupSchema, GROUPS_TABLE } = require('../../models/groups.model');
 
 module.exports = {
   up: async (queryInterface) => {
