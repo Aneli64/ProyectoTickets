@@ -25,27 +25,27 @@ const ContactSchema = {
   },
   email: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   firstName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   middleName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   lastName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   title: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   isActive: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   lastLogin: {
     type: DataTypes.DATE,
@@ -57,48 +57,48 @@ const ContactSchema = {
   },
   lastPing: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   isPortalUser: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   inOffice: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   inOfficeComment: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   activatedOn: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   desactivatedOn: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   creatorId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   modifierId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
 
   },
   disableOrganizationTicketsViewOnPortal: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   PortalViewOnly: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   BlockInboundEmail: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
 }
 

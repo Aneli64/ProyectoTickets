@@ -25,7 +25,7 @@ const ProductSchema = {
   },
   description: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   dateCreated: {
     type: DataTypes.DATE,

@@ -21,15 +21,15 @@ const CustomerSchema = {
   },
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   description: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   website: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   isActive: {
     type: DataTypes.BOOLEAN,
@@ -37,15 +37,15 @@ const CustomerSchema = {
   },
   inActiveReason: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   primaryUserID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   primaryContact: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   dateCreated: {
     type: DataTypes.DATE,
@@ -65,7 +65,7 @@ const CustomerSchema = {
   },
   hasPortalAccess: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   createdBy: {
     type: DataTypes.STRING,
@@ -73,75 +73,75 @@ const CustomerSchema = {
   },
   lastModifiedBy: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   sAExpirationDate: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   slaName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   cRMLinkID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   defaultWikiArticleID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   defaultSupportGroupID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   defaultSupportGroup: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   defaultSupportUserID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   defaultSupportUser: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   domains: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   supportHours: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   supportHoursUsed: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   supportHoursRemaining: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   needsIndexing: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   custDisIndex: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   custDistIndexTrend: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   emailTicketActions: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   entityID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
 }
 

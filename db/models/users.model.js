@@ -21,31 +21,31 @@ const UserSchema = {
   },
   email: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   firstName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   middleName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   lastName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   title: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   isActive: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   lastLogin: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   lastActivity: {
     type: DataTypes.DATE,
@@ -53,39 +53,39 @@ const UserSchema = {
   },
   lastPing: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   isSystemAdmin: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   isFinanceAdmin: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   isPortalUser: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   primaryGroupId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   inOffice: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   inOfficeComment: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   activatedOn: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   desactivatedOn: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   creatorId: {
     type: DataTypes.INTEGER,
@@ -98,15 +98,15 @@ const UserSchema = {
   },
   isOnline: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   isChatUser: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   isAiUser: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
 }
 

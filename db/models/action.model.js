@@ -11,15 +11,15 @@ const ActionsSchema = {
   },
   action_Text: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   dateModified: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   dateCreated: {
     type: DataTypes.DATE,
@@ -27,35 +27,35 @@ const ActionsSchema = {
   },
   dateClosed: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   daysClosed: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   daysOpened: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   hoursSpent: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   slaViolationTime: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   slaWarningTime: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   DueDate: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   isSecured: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
 }
 

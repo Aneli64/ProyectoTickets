@@ -51,75 +51,75 @@ const TicketSchema = {
   },
   solvedVersion: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   ticketTypeName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   status: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   statusPosition: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   reportedVersion: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   severityPosition: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   isClosed: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   severity: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   ticketNumber: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   isVisibleOnPortal: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   isKnowledgeBase: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   reportedVersionID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   solvedVersionID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   ticketStatusID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   ticketTypeID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   ticketSeverityID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   parentID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   modifierID: {
     type: DataTypes.BOOLEAN,
@@ -139,75 +139,75 @@ const TicketSchema = {
   },
   dateClosed: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   closerId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   daysClosed: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   daysOpened: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   closerName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   cratorName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   modifierName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   hoursSpent: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   slaViolationTime: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   slaWarningTime: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   knowledgeBaseCategoryID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   knowledgeBaseCategoryName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   DueDate: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   primaryCustomer: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   ticketSource: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   jiraKey: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   isSecured: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   tags: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
 }
 
