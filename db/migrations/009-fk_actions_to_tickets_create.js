@@ -1,25 +1,25 @@
 'use strict';
 
-const { TICKETS_TABLE } = require('../../models/tickets.model');
+const { ACTIONS_TABLE } = require('../models/action.model');
 const { DataTypes } = require('sequelize');
 
 module.exports = {
   up: async (queryInterface) => {
-    queryInterface.addColumn(TICKETS_TABLE, "actionsId", {
+    queryInterface.addColumn(ACTIONS_TABLE, "ticketsId", {
 
     type: DataTypes.UUID,
     allowNull: false,
     references: {
-      model: 'actions',
+      model: 'tickets',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
 
     })
   },
 
   down: async (queryInterface) => {
-    queryInterface.removeColumn(TICKETS_TABLE, "actionsId")
+    queryInterface.removeColumn(ACTIONS_TABLE, "ticketsId")
   }
 };

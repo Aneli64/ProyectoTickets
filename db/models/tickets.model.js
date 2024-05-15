@@ -16,8 +16,8 @@ const TicketSchema = {
       model: 'users',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
   groupId: {
     type: DataTypes.UUID,
@@ -26,8 +26,8 @@ const TicketSchema = {
       model: 'groups',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
   productId: {
     type: DataTypes.UUID,
@@ -36,8 +36,8 @@ const TicketSchema = {
       model: 'products',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
   orgId: {
     type: DataTypes.INTEGER,
@@ -46,8 +46,8 @@ const TicketSchema = {
       model: 'organizations',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
   solvedVersion: {
     type: DataTypes.STRING,

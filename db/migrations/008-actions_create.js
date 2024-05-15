@@ -1,6 +1,6 @@
 'use strict';
 
-const { ActionsSchema, ACTIONS_TABLE } = require('../../models/action.model');
+const { ActionsSchema, ACTIONS_TABLE } = require('../models/action.model');
 
 module.exports = {
   up: async (queryInterface) => {

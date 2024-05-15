@@ -1,6 +1,6 @@
 'use strict';
 
-const { ContactSchema, CONTACTS_TABLE } = require('../../models/contacts.model');
+const { ContactSchema, CONTACTS_TABLE } = require('../models/contacts.model');
 
 module.exports = {
   up: async (queryInterface) => {

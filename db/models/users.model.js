@@ -16,8 +16,8 @@ const UserSchema = {
       model: 'organizations',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
   email: {
     type: DataTypes.STRING,

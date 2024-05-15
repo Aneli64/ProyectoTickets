@@ -16,8 +16,8 @@ const CustomerSchema = {
       model: 'organizations',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
   name: {
     type: DataTypes.STRING,

@@ -2,15 +2,27 @@ const { config } = require('./../config/config');
 
 const USER = encodeURIComponent(config.dbUser);
 const PASSWORD = encodeURIComponent(config.dbPassword);
-const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
+const URI = `mssql://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}?instance=${config.dbInstance}`;
 
 module.exports = {
   development: {
     url: URI,
-    dialect: 'postgres',
+    dialect: 'mssql',
+    dialectOptions: {
+      options: {
+        encrypt: false,
+        trustServerCertificate: true
+      }
+    }
   },
   production: {
     url: URI,
-    dialect: 'postgres',
+    dialect: 'mssql',
+    dialectOptions: {
+      options: {
+        encrypt: false,
+        trustServerCertificate: true
+      }
+    }
   }
-}
+};

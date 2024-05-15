@@ -16,8 +16,8 @@ const ContactSchema = {
       model: 'organizations',
       key: 'id'
     },
-    onUpdate: 'CASCADE',
-    onDelete: 'CASCADE',
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
   primaryGroupId: {
     type: DataTypes.INTEGER,
