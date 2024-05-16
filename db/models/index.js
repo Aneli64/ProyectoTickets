@@ -1,9 +1,9 @@
-const { Product, ProductSchema } = require('./product.model');
+// const { Product, ProductSchema } = require('./product.model');
 
-function setupModels(sequelize) {
-  Product.init(ProductSchema, Product.config(sequelize));
-  Product.associate(sequelize.models);
+// function setupModels(sequelize) {
+//   Product.init(ProductSchema, Product.config(sequelize));
+//   Product.associate(sequelize.models);
 
-}
+// }
 
-module.exports = setupModels;
+// module.exports = setupModels;

@@ -1,17 +1,15 @@
-const Org = require('../models/org.model');
-// const { DataTypes } = require('sequelize');
+const { seq } = require('../../libs/sequelize');
+const { Organization, OrgSchema } = require('../models/org.model')
 
-const newOrg = Org.build({
-  id: 1,
-  organization: 'Organización 1',
-  dateCreated: new Date(),
-  dateModified: new Date()
-});
+Organization.init(OrgSchema, Organization.config(seq));
 
-newOrg.save()
-  .then(() => {
-    console.log('Organización creado con éxito');
-  })
-  .catch(err => {
-    console.error('Error en la creación de la organización:', err);
-  });
+async function insertOrganization(name) {
+    try {
+      const newOrganization = await Organization.create(name);
+      console.log('Nuevo ID de organización:', newOrganization.id);
+    } catch (error) {
+      console.error('Error al insertar la organización:', error);
+    }
+}
+
+module.exports = insertOrganization;
