@@ -1,0 +1,25 @@
+const OrgInsert = require("./con_INS")
+
+OrgInsert({
+  orgId: 1,
+  primaryGroupId: 3,
+  email: null,
+  firstName: "pepito",
+  middleName: null,
+  lastName: "perez",
+  title: null,
+  isActive: null,
+  lastLogin: new Date(),
+  lastActivity: new Date(),
+  lastPing: null,
+  isPortalUser: null,
+  inOffice: null,
+  inOfficeComment: null,
+  activatedOn: null,
+  desactivatedOn: null,
+  creatorId: 1,
+  modifierId: 4,
+  disableOrganizationTicketsViewOnPortal: null,
+  PortalViewOnly: null,
+  isFinanceAdmin: null,
+});

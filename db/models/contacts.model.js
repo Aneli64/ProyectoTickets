@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const CONTACTS_TABLE = 'contacts';
 
@@ -102,4 +102,15 @@ const ContactSchema = {
   },
 }
 
-module.exports = { CONTACTS_TABLE, ContactSchema };
+class Contact extends Model {
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: CONTACTS_TABLE,
+      modelName: CONTACTS_TABLE,
+      timestamps: false
+    }
+  }
+}
+
+module.exports = { Contact, CONTACTS_TABLE, ContactSchema };

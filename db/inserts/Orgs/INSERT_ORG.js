@@ -1,6 +1,6 @@
-const insertOrganization = require("./db/inserts/orgs_insert")
+const OrgInsert = require("../orgs_INS")
 
-insertOrganization({
+OrgInsert({
   organization: 'Nombre de la organización',
   dateCreated: new Date(),
   dateModified: new Date()

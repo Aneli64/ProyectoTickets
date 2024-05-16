@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const USERS_TABLE = 'users';
 
@@ -110,4 +110,15 @@ const UserSchema = {
   },
 }
 
-module.exports = { UserSchema, USERS_TABLE };
+class Users extends Model {
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: USERS_TABLE,
+      modelName: USERS_TABLE,
+      timestamps: false
+    }
+  }
+}
+
+module.exports = { Users, UserSchema, USERS_TABLE };

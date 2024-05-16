@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const GROUPS_TABLE = 'groups';
 
@@ -50,4 +50,15 @@ const GroupSchema = {
   },
 }
 
-module.exports = { GroupSchema, GROUPS_TABLE };
+class Groups extends Model {
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: GROUPS_TABLE,
+      modelName: GROUPS_TABLE,
+      timestamps: false
+    }
+  }
+}
+
+module.exports = { Groups, GroupSchema, GROUPS_TABLE };
