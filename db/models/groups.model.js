@@ -29,23 +29,23 @@ const GroupSchema = {
   },
   dateCreated: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   importId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   dateModified: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   creatorId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   modifierId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
 
   },
 }

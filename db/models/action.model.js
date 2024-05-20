@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const ACTIONS_TABLE = 'actions';
 
@@ -23,7 +23,7 @@ const ActionsSchema = {
   },
   dateCreated: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   dateClosed: {
     type: DataTypes.DATE,
@@ -59,4 +59,16 @@ const ActionsSchema = {
   },
 }
 
-module.exports = { ActionsSchema, ACTIONS_TABLE };
+class Action extends Model {
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: ACTIONS_TABLE,
+      modelName: ACTIONS_TABLE,
+      timestamps: false
+    }
+  }
+}
+
+
+module.exports = { Action, ActionsSchema, ACTIONS_TABLE };

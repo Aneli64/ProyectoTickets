@@ -49,7 +49,7 @@ const UserSchema = {
   },
   lastActivity: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   lastPing: {
     type: DataTypes.DATE,
@@ -89,11 +89,11 @@ const UserSchema = {
   },
   creatorId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   modifierId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
 
   },
   isOnline: {

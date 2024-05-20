@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const PRODUCT_TABLE = 'products';
 
@@ -21,7 +21,7 @@ const ProductSchema = {
   },
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   description: {
     type: DataTypes.STRING,
@@ -33,17 +33,28 @@ const ProductSchema = {
   },
   dateModified: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   creatorId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   modifierId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
 
   },
 }
 
-module.exports = { ProductSchema, PRODUCT_TABLE };
+class Product extends Model {
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: PRODUCT_TABLE,
+      modelName: PRODUCT_TABLE,
+      timestamps: false
+    }
+  }
+}
+
+module.exports = { Product, ProductSchema, PRODUCT_TABLE };

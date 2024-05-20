@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const CUSTOMERS_TABLE = 'customers';
 
@@ -33,7 +33,7 @@ const CustomerSchema = {
   },
   isActive: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   inActiveReason: {
     type: DataTypes.STRING,
@@ -49,19 +49,19 @@ const CustomerSchema = {
   },
   dateCreated: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   DateModified: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   creatorID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   modifierID: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   hasPortalAccess: {
     type: DataTypes.BOOLEAN,
@@ -69,7 +69,7 @@ const CustomerSchema = {
   },
   createdBy: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   lastModifiedBy: {
     type: DataTypes.STRING,
@@ -145,4 +145,15 @@ const CustomerSchema = {
   },
 }
 
-module.exports = { CustomerSchema, CUSTOMERS_TABLE };
+class Customer extends Model {
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: CUSTOMERS_TABLE,
+      modelName: CUSTOMERS_TABLE,
+      timestamps: false
+    }
+  }
+}
+
+module.exports = { Customer, CustomerSchema, CUSTOMERS_TABLE };

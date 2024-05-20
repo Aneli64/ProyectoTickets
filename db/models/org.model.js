@@ -11,15 +11,15 @@ const OrgSchema = {
   },
   organization: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   dateCreated: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   dateModified: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
 }
 

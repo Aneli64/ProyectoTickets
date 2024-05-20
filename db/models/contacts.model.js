@@ -21,7 +21,7 @@ const ContactSchema = {
   },
   primaryGroupId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   email: {
     type: DataTypes.STRING,
@@ -49,7 +49,7 @@ const ContactSchema = {
   },
   lastLogin: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   lastActivity: {
     type: DataTypes.DATE,

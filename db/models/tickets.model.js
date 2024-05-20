@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const TICKETS_TABLE = 'tickets';
 
@@ -123,19 +123,19 @@ const TicketSchema = {
   },
   modifierID: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   creatorID: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    allowNull: true,
   },
   dateModified: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   dateCreated: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   dateClosed: {
     type: DataTypes.DATE,
@@ -211,4 +211,15 @@ const TicketSchema = {
   },
 }
 
-module.exports = { TicketSchema, TICKETS_TABLE };
+class Ticket extends Model {
+  static config(sequelize){
+    return{
+      sequelize,
+      tableName: TICKETS_TABLE,
+      modelName: TICKETS_TABLE,
+      timestamps: false
+    }
+  }
+}
+
+module.exports = { Ticket, TicketSchema, TICKETS_TABLE };

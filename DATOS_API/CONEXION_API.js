@@ -6,8 +6,8 @@ const apiToken = '55e32b85-8a30-4533-84a0-9f5b1b81f45f';
 const credentials = `${organizationID}:${apiToken}`;
 const encodedCredentials = Buffer.from(credentials).toString('base64');
 
-const endpoint = 'Users';
-const directory= 'users'
+const endpoint = 'Contacts';
+const directory= 'contacts'
 
 const options = {
   hostname: 'app.teamsupport.com',
