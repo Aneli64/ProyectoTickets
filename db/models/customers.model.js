@@ -9,16 +9,6 @@ const CustomerSchema = {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4
   },
-  orgId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'organizations',
-      key: 'id'
-    },
-    onUpdate: 'NO ACTION',
-    onDelete: 'NO ACTION',
-  },
   name: {
     type: DataTypes.STRING,
     allowNull: true,
@@ -52,7 +42,7 @@ const CustomerSchema = {
     allowNull: true,
   },
   DateModified: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.DATE,
     allowNull: true,
   },
   creatorID: {
@@ -142,6 +132,16 @@ const CustomerSchema = {
   entityID: {
     type: DataTypes.INTEGER,
     allowNull: true,
+  },
+  OrganizationID: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'organizations',
+      key: 'id'
+    },
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
 }
 

@@ -100,6 +100,16 @@ const ContactSchema = {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
+  CustomerID: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    references: {
+      model: 'customers',
+      key: 'id'
+    },
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
+  },
 }
 
 class Contact extends Model {

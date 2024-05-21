@@ -1,35 +1,55 @@
 const CustomerInsert = require("../Customers/custm_INS")
+const fs = require('fs');
+const { swapEngCalendar } = require("../../../Api_tools/swap_fecha")
 
-CustomerInsert({
-  orgId: 1,
-  name: "customer",
-  description: 'Descrip del customer',
-  website: null,
-  isActive: true,
-  inActiveReason: null,
-  primaryUserID: null,
-  primaryContact: null,
-  dateCreated: new Date(),
-  DateModified: 4,
-  creatorID: 3,
-  modifierID: 4,
-  hasPortalAccess: null,
-  createdBy: "paquito",
-  lastModifiedBy: "paquito",
-  sAExpirationDate: new Date(),
-  slaName: "Standard SLA",
-  defaultWikiArticleID: 67890,
-  defaultSupportGroupID: 101112,
-  defaultSupportGroup: "Tech Support",
-  defaultSupportUserID: 131415,
-  defaultSupportUser: "JohnDoe",
-  domains: "example.com, sample.org",
-  supportHours: 40,
-  supportHoursUsed: 10,
-  supportHoursRemaining: 30,
-  needsIndexing: true,
-  custDisIndex: 5,
-  custDistIndexTrend: 2,
-  emailTicketActions: "open,close,escalate",
-  entityID: 161718
-})
+fs.readFile('apiJSON/customers.json', 'utf8', (err, data) => {
+
+  const customerData = JSON.parse(data);
+  // Asignar los usuarios del archivo JSON a la variable users
+  const customers = customerData.Customers;
+
+  customers.forEach(customer => {
+
+    customer.DateCreated = swapEngCalendar(customer.DateCreated);
+    customer.DateModified = swapEngCalendar(customer.DateModified);
+    customer.sAExpirationDate = swapEngCalendar(customer.sAExpirationDate);
+
+    CustomerInsert({
+      Id: customer.ID,
+      name: customer.Name,
+      description: customer.Description,
+      website: customer.Website,
+      isActive: customer.IsActive,
+      inActiveReason: customer.InActiveReason,
+      primaryUserID: customer.PrimaryUserID,
+      primaryContact: customer.PrimaryContact,
+      dateCreated: customer.DateCreated,
+      DateModified: customer.DateModified,
+      creatorID: customer.CreatorID,
+      modifierID: customer.ModifierID,
+      hasPortalAccess: customer.HasPortalAccess,
+      createdBy: customer.CreatedBy,
+      lastModifiedBy: customer.LastModifiedBy,
+      sAExpirationDate: customer.SDAExpirationDate,
+      slaName: customer.SlaName,
+      defaultWikiArticleID: customer.DefaultWikiArticleID,
+      defaultSupportGroupID: customer.DefaultSupportGroupID,
+      defaultSupportGroup: customer.DefaultSupportGroup,
+      defaultSupportUserID: customer.DefaultSupportGroupID,
+      defaultSupportUser: customer.DefaultSupportUser,
+      domains: customer.Domains,
+      supportHours: customer.SupportHours,
+      supportHoursUsed: customer.SupportHoursUsed,
+      supportHoursRemaining: customer.SupportHoursRemaining,
+      needsIndexing: customer.NeedsIndexing,
+      custDisIndex: customer.CustDisIndex,
+      custDistIndexTrend: customer.CustDistIndexTrend,
+      emailTicketActions: customer.EmailTicketActions,
+      entityID: customer.EntityID,
+      OrganizationID: 748448,
+    });
+  });
+});
+
+
+

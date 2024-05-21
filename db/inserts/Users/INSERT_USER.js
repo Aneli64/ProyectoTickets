@@ -1,5 +1,9 @@
 const UserInsert = require("../Users/USER_INS")
 const fs = require('fs');
+const { swapEngCalendar } = require("../../../Api_tools/swap_fecha")
+
+
+
 
 // Leer el archivo JSON
 fs.readFile('apiJSON/users.json', 'utf8', (err, data) => {
@@ -8,8 +12,15 @@ fs.readFile('apiJSON/users.json', 'utf8', (err, data) => {
   // Asignar los usuarios del archivo JSON a la variable users
   const users = userData.Users;
 
-  // console.log(users)
   users.forEach(user => {
+
+    user.LastLogin = swapEngCalendar(user.LastLogin);
+    user.LastActivity = swapEngCalendar(user.LastActivity);
+    user.LastPing = swapEngCalendar(user.LastPing);
+    user.ActivatedOn = swapEngCalendar(user.ActivatedOn);
+    user.DesactivatedOn = swapEngCalendar(user.DesactivatedOn);
+
+
     UserInsert({
       organization: user.organization,
       orgId: user.OrganizationID,

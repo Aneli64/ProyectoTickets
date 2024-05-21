@@ -1,48 +1,54 @@
-const TicketInsert = require("./ticket_INS")
 
-TicketInsert({
-  userId: "2",
-  groupId: "4",
-  productId: "5",
-  orgId: 1,
-  solvedVersion: "v1.2.3",
-  ticketTypeName: "Bug",
-  status: "Open",
-  statusPosition: 1,
-  reportedVersion: "v1.2.0",
-  severityPosition: 2,
-  isClosed: false,
-  severity: "High",
-  ticketNumber: 12345,
-  isVisibleOnPortal: true,
-  isKnowledgeBase: false,
-  reportedVersionID: 101,
-  solvedVersionID: 102,
-  ticketStatusID: 103,
-  ticketTypeID: 104,
-  ticketSeverityID: 105,
-  name: "Ticket Example",
-  parentID: 0,
-  modifierID: true,
-  creatorID: true,
-  dateModified: new Date(),
-  dateCreated: new Date(),
-  dateClosed: new Date(),
-  closerId: null,
-  daysClosed: null,
-  daysOpened: 5,
-  closerName: null,
-  cratorName: "JaneDoe",
-  modifierName: "JohnDoe",
-  hoursSpent: 10,
-  slaViolationTime: 2,
-  slaWarningTime: 1,
-  knowledgeBaseCategoryID: 201,
-  knowledgeBaseCategoryName: "Technical Support",
-  DueDate: new Date(),
-  ticketSource: "Email",
-  primaryCustomer: "ACME Corp",
-  jiraKey: 67890,
-  isSecured: true,
-  tags: "urgent,backend",
+
+
+
+const TicketInsert = require("./ticket_INS")
+const fs = require('fs');
+const { swapEngCalendar } = require("../../../Api_tools/swap_fecha")
+
+fs.readFile('apiJSON/tickets.json', 'utf8', (err, data) => {
+
+  const ticketData = JSON.parse(data);
+  // Asignar los usuarios del archivo JSON a la variable users
+  const tickets = ticketData.Tickets;
+
+  tickets.forEach(tiquet => {
+
+    tiquet.DateCreated = swapEngCalendar(tiquet.DateCreated);
+    tiquet.tiquet = swapEngCalendar(tiquet.DateModified);
+    tiquet.sAExpirationDate = swapEngCalendar(tiquet.sAExpirationDate);
+
+    TicketInsert({
+      // organization: tiquet.Organization,
+      userId: tiquet.userID,
+      groupId: tiquet.groupID,
+      productId: tiquet.productID,
+      orgId: tiquet.OrganizationID,
+      email: tiquet.Email,
+      firstName: tiquet.FirstName,
+      middleName: tiquet.MiddleName,
+      lastName: tiquet.LastName,
+      title: tiquet.Title,
+      isActive: tiquet.IsActive,
+      lastLogin: tiquet.LastLogin,
+      lastActivity: tiquet.LastActivity,
+      lastPing: tiquet.LastPing,
+      isSystemAdmin: tiquet.IsSystemAdmin,
+      isFinanceAdmin: tiquet.IsFinanceAdmin,
+      isPortalUser: tiquet.IsPortalUser,
+      primaryGroupId: tiquet.PrimaryGroupID,
+      inOffice: tiquet.InOffice,
+      inOfficeComment: tiquet.InOfficeComment,
+      activatedOn: tiquet.ActivatedOn,
+      desactivatedOn: tiquet.DeactivatedOn,
+      creatorId: tiquet.CreatorID,
+      modifierId: tiquet.ModifierID,
+      isOnline: tiquet.IsOnline,
+      isChatUser: tiquet.IsChatUser,
+      isAiUser: tiquet.IsAiUser
+    });
+  });
 });
+
+
+
