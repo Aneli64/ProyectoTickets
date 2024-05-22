@@ -38,24 +38,18 @@ const ActionsSchema = {
     allowNull: true,
   },
   hoursSpent: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-  },
-  slaViolationTime: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-  },
-  slaWarningTime: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-  },
-  DueDate: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  isSecured: {
-    type: DataTypes.BOOLEAN,
+  ticketID: {
+    type: DataTypes.UUID,
     allowNull: true,
+    references: {
+      model: 'tickets',
+      key: 'ID'
+    },
+    onUpdate: 'NO ACTION',
+    onDelete: 'NO ACTION',
   },
 }
 

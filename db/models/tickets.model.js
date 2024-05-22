@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const TICKETS_TABLE = 'tickets';
 
 const TicketSchema = {
-  id: {
+  ID: {
     allowNull: false,
     primaryKey: true,
     type: DataTypes.UUID,
@@ -11,7 +11,7 @@ const TicketSchema = {
   },
   userId: {
     type: DataTypes.UUID,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: 'users',
       key: 'id'
@@ -21,7 +21,7 @@ const TicketSchema = {
   },
   groupId: {
     type: DataTypes.UUID,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: 'groups',
       key: 'id'
@@ -31,7 +31,7 @@ const TicketSchema = {
   },
   productId: {
     type: DataTypes.UUID,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: 'products',
       key: 'id'
@@ -41,7 +41,7 @@ const TicketSchema = {
   },
   orgId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: 'organizations',
       key: 'id'
@@ -166,15 +166,15 @@ const TicketSchema = {
     allowNull: true,
   },
   hoursSpent: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
   },
   slaViolationTime: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
   },
   slaWarningTime: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
   },
   knowledgeBaseCategoryID: {
@@ -198,7 +198,7 @@ const TicketSchema = {
     allowNull: true,
   },
   jiraKey: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
   },
   isSecured: {

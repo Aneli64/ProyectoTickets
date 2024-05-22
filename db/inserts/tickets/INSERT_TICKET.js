@@ -14,38 +14,61 @@ fs.readFile('apiJSON/tickets.json', 'utf8', (err, data) => {
 
   tickets.forEach(tiquet => {
 
+    tiquet.DueDate = swapEngCalendar(tiquet.DueDate);
+    tiquet.DateClosed = swapEngCalendar(tiquet.DateClosed);
     tiquet.DateCreated = swapEngCalendar(tiquet.DateCreated);
-    tiquet.tiquet = swapEngCalendar(tiquet.DateModified);
-    tiquet.sAExpirationDate = swapEngCalendar(tiquet.sAExpirationDate);
+    tiquet.DateModified = swapEngCalendar(tiquet.DateModified);
+
+    // if (tiquet.UserID == null){
+    //   return
+    // }
 
     TicketInsert({
-      // organization: tiquet.Organization,
-      userId: tiquet.userID,
-      groupId: tiquet.groupID,
-      productId: tiquet.productID,
+      ID: tiquet.ID,
+      userId: tiquet.UserID,
+      groupId: tiquet.GroupID,
+      productId: tiquet.ProductID,
       orgId: tiquet.OrganizationID,
-      email: tiquet.Email,
-      firstName: tiquet.FirstName,
-      middleName: tiquet.MiddleName,
-      lastName: tiquet.LastName,
-      title: tiquet.Title,
-      isActive: tiquet.IsActive,
-      lastLogin: tiquet.LastLogin,
-      lastActivity: tiquet.LastActivity,
-      lastPing: tiquet.LastPing,
-      isSystemAdmin: tiquet.IsSystemAdmin,
-      isFinanceAdmin: tiquet.IsFinanceAdmin,
-      isPortalUser: tiquet.IsPortalUser,
-      primaryGroupId: tiquet.PrimaryGroupID,
-      inOffice: tiquet.InOffice,
-      inOfficeComment: tiquet.InOfficeComment,
-      activatedOn: tiquet.ActivatedOn,
-      desactivatedOn: tiquet.DeactivatedOn,
-      creatorId: tiquet.CreatorID,
-      modifierId: tiquet.ModifierID,
-      isOnline: tiquet.IsOnline,
-      isChatUser: tiquet.IsChatUser,
-      isAiUser: tiquet.IsAiUser
+      solvedVersion: tiquet.SolvedVersion,
+      ticketTypeName: tiquet.TicketTypeName,
+      status: tiquet.Status,
+      statusPosition: tiquet.StatusPosition,
+      reportedVersion: tiquet.ReportedVersion,
+      severityPosition: tiquet.SeverityPosition,
+      isClosed: tiquet.IsClosed,
+      severity: tiquet.Severity,
+      ticketNumber: tiquet.TicketNumber,
+      isVisibleOnPortal: tiquet.IsVisibleOnPortal,
+      isKnowledgeBase: tiquet.IsKnowledgeBase,
+      reportedVersionID: tiquet.ReportedVersionID,
+      solvedVersionID: tiquet.SolvedVersionID,
+      ticketStatusID: tiquet.TicketStatusID,
+      ticketTypeID: tiquet.TicketTypeID,
+      ticketSeverityID: tiquet.TicketSeverityID,
+      name: tiquet.Name,
+      parentID: tiquet.ParentID,
+      modifierID: tiquet.ModifierID,
+      creatorID: tiquet.CreatorID,
+      dateModified: tiquet.DateModified,
+      dateCreated: tiquet.DateCreated,
+      dateClosed: tiquet.DateClosed,
+      closerId: tiquet.CloserID,
+      daysClosed: tiquet.DaysClosed,
+      daysOpened: tiquet.DaysOpened,
+      closerName: tiquet.CloserName,
+      creatorName: tiquet.CreatorName,
+      modifierName: tiquet.ModifierName,
+      hoursSpent: tiquet.HoursSpent,
+      slaViolationTime: tiquet.SlaViolationTime,
+      slaWarningTime: tiquet.SlaWarningTime,
+      knowledgeBaseCategoryID: tiquet.KnowledgeBaseCategoryID,
+      knowledgeBaseCategoryName: tiquet.KnowledgeBaseCategoryName,
+      dueDate: tiquet.DueDate,
+      primaryCustomer: tiquet.PrimaryCustomer,
+      ticketSource: tiquet.TicketSource,
+      jiraKey: tiquet.JiraKey,
+      isSecured: tiquet.IsSecured,
+      tags: tiquet.Tags
     });
   });
 });
