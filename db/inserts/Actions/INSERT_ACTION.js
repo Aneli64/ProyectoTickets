@@ -2,31 +2,31 @@ const ActionInsert = require("../Actions/act_INS")
 const fs = require('fs');
 const { swapEngCalendar } = require("../../../Api_tools/swap_fecha")
 
+
+
 // Leer el archivo JSON
-fs.readFile('apiJSON/actions/actions_ticket_994.json', 'utf8', (err, data) => {
+fs.readFile('apiJSON/actions.json', 'utf8', (err, data) => {
 
   const actionData = JSON.parse(data);
   const actions = actionData.Actions;
 
-  for (let i = 1; i <= 10; i++) { //FALTA HACER BUCLE PARA ITERAR ENTRE ARRAYS INTERNOS Y SUS CAMPOS
-    console.log(i);
-  }
 
-  actions.forEach(action => {
+  actions.array.forEach(element => {
 
-    action.dateModified = swapEngCalendar(action.dateModified);
-    action.dateCreated = swapEngCalendar(action.dateCreated);
+    const dateModified = swapEngCalendar(element.DateModified);
+    const dateCreated = swapEngCalendar(element.DateCreated);
+    const dateClosed = swapEngCalendar(element.DateClosed);
 
     ActionInsert({
-      action_Text: action.Description,
-      name: action.Name,
-      dateModified: action.DateModified,
-      dateCreated: action.DateCreated,
-      dateClosed: action.DateClosed,
-      daysClosed: action.DaysClosed,
-      daysOpened: action.DaysOpened,
-      hoursSpent: action.HoursSpent,
-      ticketID: action.TicketID,
+      action_Text: element.Description,
+      name: element.Name,
+      dateModified: dateModified,
+      dateCreated: dateCreated,
+      dateClosed: dateClosed,
+      daysClosed: element.DaysClosed,
+      daysOpened: element.DaysOpened,
+      hoursSpent: element.HoursSpent,
+      ticketID: element.TicketID,
     })
-  });
+  })
 });

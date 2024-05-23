@@ -20,7 +20,6 @@ fs.readFile('apiJSON/users.json', 'utf8', (err, data) => {
     user.ActivatedOn = swapEngCalendar(user.ActivatedOn);
     user.DesactivatedOn = swapEngCalendar(user.DesactivatedOn);
 
-
     UserInsert({
       organization: user.organization,
       orgId: user.OrganizationID,
@@ -45,10 +44,9 @@ fs.readFile('apiJSON/users.json', 'utf8', (err, data) => {
       modifierId: user.ModifierId,
       isOnline: user.IsOnline,
       isChatUser: user.IsChatUser,
-      isAiUser: user.IsActive
+      isAiUser: user.IsActive,
     });
   });
 });
-
 
 

@@ -7,7 +7,7 @@ const credentials = `${organizationID}:${apiToken}`;
 const encodedCredentials = Buffer.from(credentials).toString('base64');
 
 const endpoint = 'Tickets/993/Actions';
-const directory= 'actions_ticket'
+const directory = 'actions_ticket'
 
 const options = {
   hostname: 'app.teamsupport.com',
@@ -20,7 +20,6 @@ const options = {
   },
 };
 
-// const array = [994,995,996,997,998,999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013] ACTIONS
 
 const req = https.request(options, (res) => {
   let data = '';

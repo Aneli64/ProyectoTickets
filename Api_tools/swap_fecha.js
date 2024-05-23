@@ -7,11 +7,11 @@ const swapEngCalendar = (dateString) => {
   // Dividir la parte de la fecha
   const [day, month, year] = datePart.split('/');
 
-  // Reconstruir la fecha intercambiando día y mes
-  const newDatePart = `${month}/${day}/${year}`;
+  // Construir la nueva fecha en el formato esperado por SQL Server
+  const formattedDate = `${year}-${month}-${day}`;
 
   // Si hay una parte de hora, incluirla
-  return timePart ? `${newDatePart} ${timePart}` : newDatePart;
+  return timePart ? `${formattedDate} ${timePart}` : formattedDate;
 };
 
-module.exports = {swapEngCalendar}
+module.exports = { swapEngCalendar };
