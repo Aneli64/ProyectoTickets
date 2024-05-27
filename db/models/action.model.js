@@ -10,7 +10,7 @@ const ActionsSchema = {
     defaultValue: DataTypes.UUIDV4
   },
   action_Text: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(4000),
     allowNull: true,
   },
   name: {

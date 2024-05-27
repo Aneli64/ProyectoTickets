@@ -51,5 +51,7 @@ fs.readFile('apiJSON/customers.json', 'utf8', (err, data) => {
   });
 });
 
+module.exports = { CustomerInsert }
+
 
 

@@ -7,6 +7,7 @@ async function ProductInsert(product) {
     try {
       const newProduct = await Product.create(product);
       console.log('Nuevo ID del producto:', newProduct.id);
+      return newProduct.id
     } catch (error) {
       console.error('Error al insertar el producto:', error);
     }

@@ -1,6 +1,6 @@
-const UserInsert = require("../Contacts/con_INS")
 const fs = require('fs');
-const { swapEngCalendar } = require("../../../Api_tools/swap_fecha")
+const { swapEngCalendar } = require("../../../Api_tools/swap_fecha");
+const ContactInsert = require("../Contacts/con_INS");
 
 // Leer el archivo JSON
 fs.readFile('apiJSON/contacts.json', 'utf8', (err, data) => {
@@ -18,7 +18,7 @@ fs.readFile('apiJSON/contacts.json', 'utf8', (err, data) => {
     contact.ActivatedOn = swapEngCalendar(contact.ActivatedOn);
     contact.DesactivatedOn = swapEngCalendar(contact.DesactivatedOn);
 
-    UserInsert({
+    ContactInsert({
       orgId: 748448,
       primaryGroupId: contact.PrimaryGroupID,
       email: contact.Email,
@@ -39,10 +39,11 @@ fs.readFile('apiJSON/contacts.json', 'utf8', (err, data) => {
       modifierId: contact.ModifierId,
       disableOrganizationTicketsViewOnPortal: contact.DisableOrganizationTicketsViewOnPortal,
       PortalViewOnly: contact.PortalViewOnly,
-      isFinanceAdmin: contact.IsFinanceAdmin,
-      CustomerID: contact.OrganizationID
+      BlockInboundEmail: contact.BlockInboundEmail,
     });
   });
 });
+
+module.exports = { ContactInsert }
 
 

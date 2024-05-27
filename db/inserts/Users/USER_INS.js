@@ -7,7 +7,7 @@ async function UserInsert(user) {
     try {
       const newUser = await Users.create(user);
       console.log('Nuevo ID de usuario:', newUser.id);
-      // return newUser
+      return newUser.id
     } catch (error) {
       console.error('Error al insertar el usuario:', error);
     }
