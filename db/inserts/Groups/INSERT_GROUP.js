@@ -1,9 +1,5 @@
 const GroupInsert = require("../Groups/group_INS");
 const fs = require('fs').promises;  // Usar fs.promises para operaciones asíncronas
-const path = require('path');
-
-// Ruta del archivo donde se guardarán las claves antiguas y nuevas
-const outputFilePath = path.join(__dirname, 'groups_keys.json');
 
 async function processGroup() {
   try {
@@ -39,7 +35,7 @@ async function processGroup() {
     }
 
     // Escribir las claves antiguas y nuevas en el archivo JSON
-    await fs.writeFile(outputFilePath, JSON.stringify(keysArray, null, 2));
+    await fs.writeFile("db/inserts/claves_json/groups_keys.json", JSON.stringify(keysArray, null, 2));
     console.log('Archivo JSON con claves antiguas y nuevas guardado correctamente.');
   } catch (err) {
     console.error('Error al procesar el archivo JSON:', err);

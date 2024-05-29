@@ -1,10 +1,7 @@
 const ProductInsert = require("./product_INS");
 const fs = require('fs').promises;
-const path = require('path');
 const { swapEngCalendar } = require("../../../Api_tools/swap_fecha");
 
-// Ruta del archivo donde se guardarán las claves antiguas y nuevas de los productos
-const outputFilePath = path.join(__dirname, 'products_keys.json');
 
 async function processProduct() {
   try {
@@ -43,7 +40,7 @@ async function processProduct() {
     }
 
     // Escribir las claves antiguas y nuevas en el archivo JSON
-    await fs.writeFile(outputFilePath, JSON.stringify(keysArray, null, 2));
+    await fs.writeFile('db/inserts/claves_json/products_keys.json', JSON.stringify(keysArray, null, 2));
     console.log('Archivo JSON con claves antiguas y nuevas de productos guardado correctamente.');
   } catch (err) {
     console.error('Error al procesar el archivo JSON de productos:', err);

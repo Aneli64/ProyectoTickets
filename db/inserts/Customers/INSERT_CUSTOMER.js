@@ -8,8 +8,8 @@ async function processCustomer() {
     // Asignar los usuarios del archivo JSON a la variable users
     const customers = customerData.Customers;
 
+     // Bucle en donde realizaremos el insert del customer
     customers.forEach(customer => {
-
       customer.DateCreated = swapEngCalendar(customer.DateCreated);
       customer.DateModified = swapEngCalendar(customer.DateModified);
       customer.sAExpirationDate = swapEngCalendar(customer.sAExpirationDate);

@@ -1,6 +1,7 @@
 const { seq } = require('../../../libs/sequelize');
 const { Action, ActionsSchema } = require('../../models/action.model')
 
+// Inicializamos la tabla con su esquema y configuración correspondientes
 Action.init(ActionsSchema, Action.config(seq));
 
 async function ActionInsert(action) {

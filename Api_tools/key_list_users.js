@@ -1,8 +1,9 @@
 const fs = require('fs').promises;
 
+// Lista de claves obtenidas del json de las claves de usuario
 async function js_users_to_list() {
   try {
-    const data = await fs.readFile('db/inserts/Users/users_keys.json', 'utf8');
+    const data = await fs.readFile('db/inserts/claves_json/users_keys.json', 'utf8');
     const usersData = JSON.parse(data);
     const listaKeysUsers = usersData.map(item => ({
       oldKey: item.oldKey,

@@ -61,7 +61,7 @@ async function processUsers() {
     }
 
     // Escribir el array de claves en un archivo JSON
-    await fs.writeFile('db/inserts/users/users_keys.json', JSON.stringify(keysArray, null, 2));
+    await fs.writeFile('db/inserts/claves_json/users_keys.json', JSON.stringify(keysArray, null, 2));
     console.log('Claves antiguas y nuevas de usuarios guardadas en users_keys.json');
   } catch (err) {
     console.error('Error al procesar los usuarios:', err);

@@ -1,6 +1,7 @@
 const { seq } = require('../../../libs/sequelize');
 const { Organization, OrgSchema } = require('../../models/org.model')
 
+// Inicializamos la tabla con su esquema y configuración correspondientes
 Organization.init(OrgSchema, Organization.config(seq));
 
 async function OrgInsert(name) {

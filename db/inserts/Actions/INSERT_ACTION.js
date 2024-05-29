@@ -25,7 +25,6 @@ async function processAction() {
       const dateCreated = swapEngCalendar(element.DateCreated);
       const dateClosed = swapEngCalendar(element.DateClosed);
 
-      // console.log(element.TicketID)
       // Insertar la acción en la base de datos
       await ActionInsert({
         action_Text: element.Description,
@@ -43,8 +42,5 @@ async function processAction() {
     console.error('Error al procesar las acciones:', error);
   }
 }
-
-// Llamar a la función principal
-// processActions();
 
 module.exports = { processAction };

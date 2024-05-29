@@ -1,6 +1,7 @@
 const { seq } = require('../../../libs/sequelize');
 const { Groups, GroupSchema } = require('../../models/groups.model');
 
+// Inicializamos la tabla con su esquema y configuración correspondientes
 Groups.init(GroupSchema, Groups.config(seq));
 
 async function GroupInsert(group) {

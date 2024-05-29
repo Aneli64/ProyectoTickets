@@ -1,6 +1,7 @@
 const { seq } = require('../../../libs/sequelize');
 const { Contact, ContactSchema } = require('../../models/contacts.model')
 
+// Inicializamos la tabla con su esquema y configuración correspondientes
 Contact.init(ContactSchema, Contact.config(seq));
 
 async function ContactInsert(contact) {

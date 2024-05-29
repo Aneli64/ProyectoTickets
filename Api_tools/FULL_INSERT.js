@@ -23,10 +23,6 @@ async function runInserts() {
   }
 }
 
-// function sleep(ms){
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
-
 runInserts();
 
 

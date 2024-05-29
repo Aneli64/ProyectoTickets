@@ -1,6 +1,7 @@
 const { seq } = require('../../../libs/sequelize');
 const { Users, UserSchema } = require('../../models/users.model')
 
+// Inicializamos la tabla con su esquema y configuración correspondientes
 Users.init(UserSchema, Users.config(seq));
 
 async function UserInsert(user) {

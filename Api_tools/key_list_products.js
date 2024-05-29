@@ -1,8 +1,9 @@
 const fs = require('fs').promises;
 
+// Lista de claves obtenidas del json de las claves de producto
 async function js_product_to_list() {
   try {
-    const data = await fs.readFile('db/inserts/product/products_keys.json', 'utf8');
+    const data = await fs.readFile('db/inserts/claves_json/products_keys.json', 'utf8');
     const productsData = JSON.parse(data);
     const listaKeysProduct = productsData.map(item => ({
       oldKey: item.oldKey,
