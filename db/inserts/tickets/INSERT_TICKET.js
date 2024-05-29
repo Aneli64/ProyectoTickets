@@ -13,12 +13,6 @@ async function processTicket(tiquet, listaKeysGroup, listaKeysProduct, listaKeys
   tiquet.DateCreated = swapEngCalendar(tiquet.DateCreated);
   tiquet.DateModified = swapEngCalendar(tiquet.DateModified);
 
-  // Guardar las claves antiguas y nuevas en el array
-  keysArray.push({
-    oldKey: tiquet.ID,
-    newKey: null // Se actualizará luego de insertar el ticket en la base de datos
-  });
-
   // Cambiamos las claves de usuario a las nuevas
   for (const item of listaKeysUsers) {
     if (tiquet.UserID == item["oldKey"]) {
@@ -48,7 +42,7 @@ async function processTicket(tiquet, listaKeysGroup, listaKeysProduct, listaKeys
     userId: tiquet.UserID,
     groupId: tiquet.GroupID,
     productId: tiquet.ProductID,
-    orgId: tiquet.OrganizationID,
+    orgId: 748448,
     solvedVersion: tiquet.SolvedVersion,
     ticketTypeName: tiquet.TicketTypeName,
     status: tiquet.Status,
@@ -92,7 +86,10 @@ async function processTicket(tiquet, listaKeysGroup, listaKeysProduct, listaKeys
   });
 
   // Actualizar la clave nueva del ticket en el array de claves
-  keysArray[keysArray.length - 1].newKey = newTicketId;
+  keysArray.push({
+    oldKey: tiquet.ID,
+    newKey: newTicketId
+  });
 }
 
 // Función principal para leer y procesar los tickets
@@ -122,7 +119,7 @@ async function processTickets() {
   }
 }
 
-// Llamar a la función principal
-processTickets();
 
+// processTickets();
 module.exports = { processTickets };
+

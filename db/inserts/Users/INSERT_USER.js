@@ -13,8 +13,7 @@ async function processUser(user) {
 
   // Inserción del usuario en la base de datos
   const newUserId = await UserInsert({
-    organization: user.organization,
-    orgId: user.OrganizationID,
+    orgId: 748448,
     email: user.Email,
     firstName: user.FirstName,
     middleName: user.MiddleName,
@@ -70,6 +69,6 @@ async function processUsers() {
 }
 
 // Llamar a la función principal
-processUsers();
+// processUsers();
 
 module.exports = { processUsers }

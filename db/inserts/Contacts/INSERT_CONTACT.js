@@ -2,8 +2,9 @@ const fs = require('fs');
 const { swapEngCalendar } = require("../../../Api_tools/swap_fecha");
 const ContactInsert = require("../Contacts/con_INS");
 
-// Leer el archivo JSON
-fs.readFile('apiJSON/contacts.json', 'utf8', (err, data) => {
+async function processContact(){
+  // Leer el archivo JSON
+  await fs.readFile('apiJSON/contacts.json', 'utf8', (err, data) => {
 
   const contactData = JSON.parse(data);
   // Asignar los usuarios del archivo JSON a la variable users
@@ -43,7 +44,7 @@ fs.readFile('apiJSON/contacts.json', 'utf8', (err, data) => {
     });
   });
 });
-
-module.exports = { ContactInsert }
+}
+module.exports = { processContact }
 
 

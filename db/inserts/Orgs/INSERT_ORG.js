@@ -1,7 +1,7 @@
 const OrgInsert = require("../Orgs/orgs_INS")
 
 // LAS FECHAS DEBEREMOS DE AÑADIRLAS CON UN TRIGGER
-function insertFullOrgs(){
+async function processOrg(){
   OrgInsert({
     id: 748448,
     organization: 'IDITIC-Sandbox',
@@ -31,4 +31,4 @@ function insertFullOrgs(){
 //   });
 
 
-module.exports = { insertFullOrgs }
+module.exports = { processOrg }

@@ -4,7 +4,7 @@ const { swapEngCalendar } = require("../../../Api_tools/swap_fecha");
 const js_tickets_to_list = require("../../../Api_tools/key_list_tickets");
 
 // Función para leer y procesar las acciones
-async function processActions() {
+async function processAction() {
   try {
     const data = await fs.readFile('apiJSON/actions.json', 'utf8');
     const actionData = JSON.parse(data);
@@ -45,6 +45,6 @@ async function processActions() {
 }
 
 // Llamar a la función principal
-processActions();
+// processActions();
 
-module.exports = { processActions }
+module.exports = { processAction };
