@@ -37,7 +37,6 @@ async function processTicket(tiquet, listaKeysGroup, listaKeysProduct, listaKeys
     }
   }
 
-  // Inserción del ticket en la base de datos
   const newTicketId = await TicketInsert({
     userId: tiquet.UserID,
     groupId: tiquet.GroupID,
