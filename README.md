@@ -18,7 +18,7 @@ Con este proyecto, pretendemos aprender acerca del funcionamientop de una api y 
 - ## Api_tools
   ### Utilidades de nuestra app.
 
-  - <strong> api_connection.js </strong> -> Conexión a nuestra api de tickets
+  - <strong> api_connection.js </strong> -> Conexión a nuestra api de tickets mediante endpoints, almacenando la información obtenida en formato json
   - <strong> FULL_INSERT </strong> -> Insercción automatizada de todos nuestros inserts
   - <strong> key_list_group.js, key_list_product.js, key_list_tickets.js y key_list_group.js </strong> -> Método que nos transforma los json de nuestras claves, en listas utilizables
   - <strong> swap_fecha.js </strong> -> Método conversor de formatos americano y español

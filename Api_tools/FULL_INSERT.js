@@ -1,3 +1,4 @@
+// Funciones inserts de cada tabla
 const { processOrg } = require("../db/inserts/Orgs/INSERT_ORG");
 const { processGroup } = require("../db/inserts/Groups/INSERT_GROUP");
 const { processUsers } = require("../db/inserts/Users/INSERT_USER");
@@ -7,6 +8,7 @@ const { processProduct } = require("../db/inserts/product/INSERT_PRODUCT");
 const { processTickets } = require("../db/inserts/tickets/INSERT_TICKET");
 const { processAction } = require("../db/inserts/Actions/INSERT_ACTION");
 
+// Función asíncrona que nos realiza todos los inserts de forma secuencial
 async function runInserts() {
   try {
     await processOrg();
