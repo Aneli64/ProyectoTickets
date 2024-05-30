@@ -3,45 +3,45 @@ const { Model, DataTypes } = require('sequelize');
 const ACTIONS_TABLE = 'actions';
 
 const ActionsSchema = {
-  id: {
+  ID: {
     allowNull: false,
     primaryKey: true,
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4
   },
-  action_Text: {
+  Description: {
     type: DataTypes.STRING(4000),
     allowNull: true,
   },
-  name: {
+  Name: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  dateModified: {
+  DateModified: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  dateCreated: {
+  DateCreated: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  dateClosed: {
+  DateClosed: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  daysClosed: {
+  DaysClosed: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  daysOpened: {
+  DaysOpened: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  hoursSpent: {
+  HoursSpent: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  ticketID: {
+  TicketID: {
     type: DataTypes.UUID,
     allowNull: true,
     references: {

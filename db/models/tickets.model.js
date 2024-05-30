@@ -9,7 +9,7 @@ const TicketSchema = {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4
   },
-  userId: {
+  UserID: {
     type: DataTypes.UUID,
     allowNull: true,
     references: {
@@ -19,7 +19,7 @@ const TicketSchema = {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   },
-  groupId: {
+  GroupID: {
     type: DataTypes.UUID,
     allowNull: true,
     references: {
@@ -29,7 +29,7 @@ const TicketSchema = {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   },
-  productId: {
+  ProductID: {
     type: DataTypes.UUID,
     allowNull: true,
     references: {
@@ -39,7 +39,7 @@ const TicketSchema = {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   },
-  orgId: {
+  OrganizationID: {
     type: DataTypes.INTEGER,
     allowNull: true,
     references: {
@@ -49,139 +49,139 @@ const TicketSchema = {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   },
-  solvedVersion: {
+  SolvedVersion: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  ticketTypeName: {
+  TicketTypeName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  status: {
+  Status: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  statusPosition: {
+  StatusPosition: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  reportedVersion: {
+  ReportedVersion: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  severityPosition: {
+  SeverityPosition: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  isClosed: {
+  IsClosed: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  severity: {
+  Severity: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  ticketNumber: {
+  TicketNumber: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  isVisibleOnPortal: {
+  IsVisibleOnPortal: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  isKnowledgeBase: {
+  IsKnowledgeBase: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  reportedVersionID: {
+  ReportedVersionID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  solvedVersionID: {
+  SolvedVersionID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  ticketStatusID: {
+  TicketStatusID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  ticketTypeID: {
+  TicketTypeID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  ticketSeverityID: {
+  TicketSeverityID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  name: {
+  UserName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  parentID: {
+  ParentID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  modifierID: {
+  ModifierID: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  creatorID: {
+  CreatorID: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  dateModified: {
+  DateModified: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  dateCreated: {
+  DateCreated: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  dateClosed: {
+  DateClosed: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  closerId: {
+  CloserID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  daysClosed: {
+  DaysClosed: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  daysOpened: {
+  DaysOpened: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  closerName: {
+  CloserName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  cratorName: {
+  CreatorName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  modifierName: {
+  ModifierName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  hoursSpent: {
+  HoursSpent: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  slaViolationTime: {
+  SlaViolationTime: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  slaWarningTime: {
+  SlaWarningTime: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  knowledgeBaseCategoryID: {
+  KnowledgeBaseCategoryID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  knowledgeBaseCategoryName: {
+  KnowledgeBaseCategoryName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
@@ -189,15 +189,15 @@ const TicketSchema = {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  primaryCustomer: {
+  PrimaryCustomer: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  ticketSource: {
+  TicketSource: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  jiraKey: {
+  JiraKey: {
     type: DataTypes.STRING,
     allowNull: true,
   },
@@ -205,15 +205,15 @@ const TicketSchema = {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  tags: {
+  Tags: {
     type: DataTypes.STRING,
     allowNull: true,
   },
 }
 
 class Ticket extends Model {
-  static config(sequelize){
-    return{
+  static config(sequelize) {
+    return {
       sequelize,
       tableName: TICKETS_TABLE,
       modelName: TICKETS_TABLE,

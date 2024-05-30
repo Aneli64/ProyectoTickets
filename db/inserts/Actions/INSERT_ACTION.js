@@ -14,29 +14,19 @@ async function processAction() {
     const keys = await js_tickets_to_list();
 
     // Procesar cada acciónticketsData.map
-    for (const element of actions) {
+    for (const action of actions) {
       // Cambiar la clave del TicketID si es necesario
-      const keyMapping = keys.find(key => key.oldKey == element.TicketID);
+      const keyMapping = keys.find(key => key.oldKey == action.TicketID);
       if (keyMapping) {
-        element.TicketID = keyMapping.newKey;
+        action.TicketID = keyMapping.newKey;
       }
       // Convertir las fechas al formato necesario
-      const dateModified = swapEngCalendar(element.DateModified);
-      const dateCreated = swapEngCalendar(element.DateCreated);
-      const dateClosed = swapEngCalendar(element.DateClosed);
+      action.DateModified = swapEngCalendar(action.DateModified);
+      action.DateCreated = swapEngCalendar(action.DateCreated);
+      action.DateClosed= swapEngCalendar(action.DateClosed);
 
       // Insertar la acción en la base de datos
-      await ActionInsert({
-        action_Text: element.Description,
-        name: element.Name,
-        dateModified: dateModified,
-        dateCreated: dateCreated,
-        dateClosed: dateClosed,
-        daysClosed: element.DaysClosed,
-        daysOpened: element.DaysOpened,
-        hoursSpent: element.HoursSpent,
-        ticketID: element.TicketID,
-      });
+      await ActionInsert(action)
     }
   } catch (error) {
     console.error('Error al procesar las acciones:', error);

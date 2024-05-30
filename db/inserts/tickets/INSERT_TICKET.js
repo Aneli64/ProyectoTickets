@@ -37,52 +37,7 @@ async function processTicket(tiquet, listaKeysGroup, listaKeysProduct, listaKeys
     }
   }
 
-  const newTicketId = await TicketInsert({
-    userId: tiquet.UserID,
-    groupId: tiquet.GroupID,
-    productId: tiquet.ProductID,
-    orgId: 748448,
-    solvedVersion: tiquet.SolvedVersion,
-    ticketTypeName: tiquet.TicketTypeName,
-    status: tiquet.Status,
-    statusPosition: tiquet.StatusPosition,
-    reportedVersion: tiquet.ReportedVersion,
-    severityPosition: tiquet.SeverityPosition,
-    isClosed: tiquet.IsClosed,
-    severity: tiquet.Severity,
-    ticketNumber: tiquet.TicketNumber,
-    isVisibleOnPortal: tiquet.IsVisibleOnPortal,
-    isKnowledgeBase: tiquet.IsKnowledgeBase,
-    reportedVersionID: tiquet.ReportedVersionID,
-    solvedVersionID: tiquet.SolvedVersionID,
-    ticketStatusID: tiquet.TicketStatusID,
-    ticketTypeID: tiquet.TicketTypeID,
-    ticketSeverityID: tiquet.TicketSeverityID,
-    name: tiquet.Name,
-    parentID: tiquet.ParentID,
-    modifierID: tiquet.ModifierID,
-    creatorID: tiquet.CreatorID,
-    dateModified: tiquet.DateModified,
-    dateCreated: tiquet.DateCreated,
-    dateClosed: tiquet.DateClosed,
-    closerId: tiquet.CloserID,
-    daysClosed: tiquet.DaysClosed,
-    daysOpened: tiquet.DaysOpened,
-    closerName: tiquet.CloserName,
-    creatorName: tiquet.CreatorName,
-    modifierName: tiquet.ModifierName,
-    hoursSpent: tiquet.HoursSpent,
-    slaViolationTime: tiquet.SlaViolationTime,
-    slaWarningTime: tiquet.SlaWarningTime,
-    knowledgeBaseCategoryID: tiquet.KnowledgeBaseCategoryID,
-    knowledgeBaseCategoryName: tiquet.KnowledgeBaseCategoryName,
-    dueDate: tiquet.DueDate,
-    primaryCustomer: tiquet.PrimaryCustomer,
-    ticketSource: tiquet.TicketSource,
-    jiraKey: tiquet.JiraKey,
-    isSecured: tiquet.IsSecured,
-    tags: tiquet.Tags
-  });
+  const newTicketId = await TicketInsert(tiquet);
 
   // Actualizar la clave nueva del ticket en el array de claves
   keysArray.push({
@@ -118,7 +73,5 @@ async function processTickets() {
   }
 }
 
-
-// processTickets();
 module.exports = { processTickets };
 

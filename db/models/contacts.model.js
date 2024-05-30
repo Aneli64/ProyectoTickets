@@ -3,13 +3,13 @@ const { Model, DataTypes } = require('sequelize');
 const CONTACTS_TABLE = 'contacts';
 
 const ContactSchema = {
-  id: {
+  ID: {
     allowNull: false,
     primaryKey: true,
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4
   },
-  orgId: {
+  OrganizationID: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
@@ -19,76 +19,76 @@ const ContactSchema = {
     onUpdate: 'NO ACTION',
     onDelete: 'NO ACTION',
   },
-  primaryGroupId: {
+  PrimaryGroupID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  email: {
+  Email: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  firstName: {
+  FirstName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  middleName: {
+  MiddleName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  lastName: {
+  LastName: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  title: {
+  Title: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  isActive: {
+  IsActive: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  lastLogin: {
+  LastLogin: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  lastActivity: {
+  LastActivity: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  lastPing: {
+  LastPing: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  isPortalUser: {
+  IsPortalUser: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  inOffice: {
+  InOffice: {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
-  inOfficeComment: {
+  InOfficeComment: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  activatedOn: {
+  ActivatedOn: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  desactivatedOn: {
+  DeactivatedOn: {
     type: DataTypes.DATE,
     allowNull: true,
   },
-  creatorId: {
+  CreatorID: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  modifierId: {
+  ModifierID: {
     type: DataTypes.INTEGER,
     allowNull: true,
 
   },
-  disableOrganizationTicketsViewOnPortal: {
+  DisableOrganizationTicketsViewOnPortal: {
     type: DataTypes.STRING,
     allowNull: true,
   },
@@ -103,8 +103,8 @@ const ContactSchema = {
 }
 
 class Contact extends Model {
-  static config(sequelize){
-    return{
+  static config(sequelize) {
+    return {
       sequelize,
       tableName: CONTACTS_TABLE,
       modelName: CONTACTS_TABLE,
