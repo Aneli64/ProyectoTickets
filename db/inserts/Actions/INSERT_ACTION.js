@@ -12,7 +12,7 @@ async function processAction() {
 
     // Obtener las claves antiguas y nuevas de los tickets
     const keys = await js_tickets_to_list();
-
+2
     // Procesar cada acciónticketsData.map
     for (const action of actions) {
       // Cambiar la clave del TicketID si es necesario
