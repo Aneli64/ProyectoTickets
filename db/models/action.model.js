@@ -18,15 +18,15 @@ const ActionsSchema = {
     allowNull: true,
   },
   DateModified: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   DateCreated: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   DateClosed: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   DaysClosed: {

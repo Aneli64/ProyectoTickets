@@ -38,11 +38,11 @@ const CustomerSchema = {
     allowNull: true,
   },
   dateCreated: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   DateModified: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   creatorID: {
@@ -66,7 +66,7 @@ const CustomerSchema = {
     allowNull: true,
   },
   sAExpirationDate: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   slaName: {

@@ -44,15 +44,15 @@ const UserSchema = {
     allowNull: true,
   },
   lastLogin: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   lastActivity: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   lastPing: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   isSystemAdmin: {
@@ -80,11 +80,11 @@ const UserSchema = {
     allowNull: true,
   },
   activatedOn: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   desactivatedOn: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   creatorId: {

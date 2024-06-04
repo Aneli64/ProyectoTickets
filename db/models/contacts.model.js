@@ -48,15 +48,15 @@ const ContactSchema = {
     allowNull: true,
   },
   LastLogin: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   LastActivity: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: false,
   },
   LastPing: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   IsPortalUser: {
@@ -72,11 +72,11 @@ const ContactSchema = {
     allowNull: true,
   },
   ActivatedOn: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   DeactivatedOn: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   CreatorID: {

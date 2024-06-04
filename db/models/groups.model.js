@@ -28,7 +28,7 @@ const GroupSchema = {
     allowNull: true,
   },
   dateCreated: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   importId: {
@@ -36,7 +36,7 @@ const GroupSchema = {
     allowNull: true,
   },
   dateModified: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   creatorId: {

@@ -28,11 +28,11 @@ const ProductSchema = {
     allowNull: true,
   },
   dateCreated: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: false,
   },
   dateModified: {
-    type: DataTypes.DATE,
+    type: "SMALLDATETIME",
     allowNull: true,
   },
   creatorId: {
