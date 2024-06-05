@@ -20,5 +20,5 @@ jobs:
 
     - name: Run Node.js script with secret
       env:
-        API_TOKEN: ${{ secrets.SECRET_TOKEN }}
+        SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
       run: node Api_tools/api_connection.js
