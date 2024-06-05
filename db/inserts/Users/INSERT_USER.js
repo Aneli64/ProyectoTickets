@@ -68,7 +68,4 @@ async function processUsers() {
   }
 }
 
-// Llamar a la función principal
-// processUsers();
-
 module.exports = { processUsers }

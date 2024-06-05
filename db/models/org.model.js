@@ -15,12 +15,10 @@ const OrgSchema = {
   },
   dateCreated: {
     type: DataTypes.DATE,
-    // type: "SMALLDATETIME",
     allowNull: true,
   },
   dateModified: {
     type: DataTypes.DATE,
-    // type: "SMALLDATETIME",
     allowNull: true,
   },
 }
